@@ -15,5 +15,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Robert Hampton",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbzzilla/craigscreen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robbzzilla/craigscreen/issues"
+  },
+  "homepage": "https://github.com/robbzzilla/craigscreen#readme"
 }

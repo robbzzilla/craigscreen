@@ -3,17 +3,15 @@ var path = require('path');
 var express = require('express');
 var app = express();
 const router = express.Router();
+var session = require('express-session');
 var Nightmare = require('nightmare'),
     nightmare = Nightmare();
-
-
 
 
 const { Pool } = require('pg');
 
 const connectionString = process.env.DATABASE_URL;
 
-var session = require('express-session');
 
 app.use(session({
     secret: 'craig',
