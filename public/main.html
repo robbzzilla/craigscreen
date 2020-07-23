@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Form</title>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="server.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>
+    <h1>Craigslist Screener</h1>
+    <p>Select a filter to display all postings for a certain category from Craigslist</p>
+    <label for="city">Choose a city:</label>
+    <input type="text" name="city" id="city" placeholder="City Name"><br>
+    <label for="filter">Choose a category:</label>
+    <select name="filter" id="filter">
+        <option value="cto"selected>Cars & Trucks</option>
+        <option value="sys">Computers</option>
+        <option value="sop">Computer Parts</option>
+        <option value="ele">Electronics</option>
+        <option value="tls">Tools</option>
+    </select><br>
+    <label for="items">Items per page</label>
+    <select name="items" id="items">
+      <option value="10"selected>10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+      <option value="50">50</option>
+  </select><br>
+    <button onclick="getFilter();">Get Results</button>
+    <div id="status"></div>
+    <div id="listings"></div>
+</div>
+
+</body>
+</html>

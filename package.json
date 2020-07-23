@@ -8,11 +8,12 @@
     "express-session": "^1.17.1",
     "jquery": "^3.5.1",
     "nightmare": "^3.0.2",
+    "node-craigslist": "^2.2.0",
     "pg": "^8.3.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node craigslist.js", 
+    "start": "node craigslist.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Robert Hampton",

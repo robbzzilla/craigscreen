@@ -1,0 +1,25 @@
+body {
+    max-width: 960px;
+ }
+ table {
+    border-collapse: collapse;
+ }
+ th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+ }
+ .error {
+    display: none;
+    font-size: 12px;
+    color: #ff0000;
+ }
+ .error p {
+    margin-top: 0;
+ }
+ .show {
+    display: initial;
+ }
+ .right {
+    text-align: right;
+ }
