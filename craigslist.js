@@ -2,19 +2,8 @@ var path = require('path');
 var express = require('express');
 var app = express();
 var craigslist = require('node-craigslist')
-var session = require('express-session');
+const listController = require("./controllers/listController.js")
 
-
-const { Pool } = require('pg');
-
-const connectionString = process.env.DATABASE_URL;
-
-
-app.use(session({
-    secret: 'craig',
-    resave: false,
-    saveUninitialized: true
-}))
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -25,6 +14,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logRequest);
 app.post('/getFilter', handleFilter);
+app.get('/getFavoriteList', listController.getFavoriteList);
+app.get('/addFavorite', listController.addFavorite);
 
 app.listen(app.get('port'), function() {
     console.log('Craiglist Scanner is running on port', app.get('port'));
@@ -39,8 +30,7 @@ function handleFilter(request, response) {
     console.log("Searching for " + filter + " in " + city);
 
     if (city != "") {
-        request.session.city = city;
-        request.session.filter = filter;
+
         result = {success: true};
 
         var

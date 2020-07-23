@@ -14,7 +14,33 @@ function getFilter() {
 
         listing = parseInt($("#items").val(), 10);
         for(listing; listing > 0; listing--){
-            $("#listings").append("Title of listing is: " + result[listing].title + '<br/>' + "<a href='" + result[listing].url + "'>Link</a><br/><br/>");
+            _title = result[listing].title;
+            _url = result[listing].url;
+            $("#listings").append("<input type='hidden' id='list_title' value='" + _title + "'>Title: " + _title + '</input><br/>' + "<a href='" + _url + 
+            "'>Link</a><br/><button onclick='addFavorite();'>Favorite</button><br/><br/>");
         }
+    });
+}
+
+function getFavoriteList() {
+    $.get("/getFavoriteList", function(result) {
+
+        for(listing in result) {
+            $("#favorites").append("Title of listing is: " + _title + '<br/>' + "<a href='" + _url + "'>Link</a><br/><br/>");
+        }
+    })
+}
+
+function addFavorite() {
+    var title = $("#list_title").val();
+    var url = "blank";
+
+    var params = {
+        title: title,
+        url: url
+    };
+
+    $.get("/addFavorite", params, function(result) {
+        console.log("Adding item to favorites...");
     });
 }
